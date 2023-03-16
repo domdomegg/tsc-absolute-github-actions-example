@@ -8,7 +8,7 @@ const main = () => {
     throw new Error('File is empty');
   }
 
-  if (myFile.startsWith('an error string', '2')) {
+  if (myFile.startsWith('an error string', '0')) {
     throw new Error('File contained error');
   }
 };
