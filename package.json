@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "build": "echo \"::remove-matcher owner=tsc::\" && echo \"::add-matcher::.github/matchers/tsc-absolute.json\" && tsc-absolute --project tsconfig.build.json || exit 0"
+    "build": "npm run matchers && tsc-absolute --project tsconfig.build.json || exit 0",
+    "matchers": "echo '::remove-matcher owner=tsc::' && node -v | grep -q 'v18.' && echo '::add-matcher::.github/matchers/tsc-absolute.json'"
   },
   "devDependencies": {
     "@tsconfig/node-lts-strictest": "^18.12.1",

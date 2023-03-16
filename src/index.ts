@@ -4,11 +4,11 @@ import { readFileSync } from 'node:fs';
 const main = () => {
   const myFile = readFileSync('./some-file.txt', { encoding: 'utf-8' });
 
-  if (myFile.length() === 0) {
+  if (myFile.length() <= 0) {
     throw new Error('File is empty');
   }
 
-  if (myFile.startsWith('an error string', '0')) {
+  if (myFile.startsWith('an error string', '1')) {
     throw new Error('File contained error');
   }
 };
