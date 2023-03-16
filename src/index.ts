@@ -1,3 +1,16 @@
-export const sum = (a: number, b: number): number => a + b;
+import { readFileSync } from 'node:fs';
 
-export const multiply = (a: number, b: number): number => a * b;
+// This is an example TypeScript file, with some intentional errors so you can see them in the GitHub UI
+const main = () => {
+  const myFile = readFileSync('./some-file.txt', { encoding: 'utf-8' });
+
+  if (myFile.length() === 0) {
+    throw new Error('File is empty');
+  }
+
+  if (myFile.startsWith('an error string', '2')) {
+    throw new Error('File contained error');
+  }
+};
+
+main();
