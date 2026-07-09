@@ -14,21 +14,16 @@
     "dist"
   ],
   "scripts": {
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint": "eslint",
     "build": "npm run matchers && tsc-absolute --project tsconfig.build.json || exit 0",
     "matchers": "echo '::remove-matcher owner=tsc::' && node -v | grep -q 'v18.' && echo '::add-matcher::.github/matchers/tsc-absolute.json'"
   },
   "devDependencies": {
     "@tsconfig/node-lts-strictest": "^18.12.1",
     "@types/node": "^18.15.3",
-    "eslint": "^8.36.0",
-    "eslint-config-domdomegg": "^1.2.1",
+    "eslint": "^9.0.0",
+    "eslint-config-domdomegg": "^2.0.9",
     "tsc-absolute": "^0.1.2",
     "typescript": "^4.9.5"
-  },
-  "eslintConfig": {
-    "extends": [
-      "eslint-config-domdomegg"
-    ]
   }
 }
